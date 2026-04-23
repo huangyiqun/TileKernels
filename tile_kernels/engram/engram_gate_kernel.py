@@ -534,8 +534,8 @@ def engram_gate_bwd(
     Args:
         grad_out: Gradient of output, shape (num_tokens, hc_mult, hidden_size), bfloat16.
         hidden_states: Original input from forward, shape (num_tokens, hc_mult, hidden_size), bfloat16.
-        k: Original key embeddings from forward.
-        v: Original value embeddings from forward.
+        k: Original key embeddings from forward, shape (num_tokens, hc_mult, hidden_size), bfloat16.
+        v: Original value embeddings from forward, shape (num_tokens, hidden_size), bfloat16.
         weight_fused: Fused RMSNorm weight (weight_hidden * weight_embed), shape (hc_mult, hidden_size), float32.
         dot: Saved scaled dot product from forward, shape (num_tokens, hc_mult), float32.
         gate_score: Saved gate scores from forward, shape (num_tokens, hc_mult), float32.
